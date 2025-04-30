@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between; /* Đẩy logo sang trái và navigation sang giữa */
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3em;
+    color: #359381;
+    pointer-events: none;
+    margin-right: auto; /* Đẩy logo sang bên trái */
+}
+
+.navigation {
+    position: absolute;
+    left: 50%; /* Đặt navigation ở giữa trang */
+    transform: translateX(-50%); /* Căn giữa navigation theo chiều ngang */
+    display: flex; /* Đảm bảo các liên kết hiển thị theo hàng ngang */
+}
+
+.navigation a {
+    margin-right: 20px; /* Tạo khoảng cách giữa các liên kết */
+    text-decoration: none; /* Loại bỏ gạch chân */
+    color: #359381; /* Đặt màu chữ */
+    border-radius: 25px; /* Đặt bo góc cho nền */
+    font-size: 1em;
+    font-weight: 700;
+    padding: 5px 10px; /* Tăng kích thước nền xung quanh chữ */
+}
+
+.navigation a:last-child {
+    margin-right: 0; /* Loại bỏ khoảng cách cho liên kết cuối cùng */
+}
+
+.navigation a:hover, 
+.navigation a.active {
+    background: #359381; /* Đổi màu nền khi hover */
+    color: #ffffff; /* Đổi màu chữ khi hover */
+    transition: 0.3s;
+}
+
+.Parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Chiều cao tối thiểu là toàn màn hình */
+    overflow: hidden; /* Ngăn nội dung tràn ra ngoài */
+    z-index: 0; /* Đặt thứ tự hiển thị thấp hơn */
+}
+
+.Parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Đảm bảo hình ảnh bao phủ toàn bộ chiều cao */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+    pointer-events: none; /* Vô hiệu hóa sự kiện chuột trên hình ảnh */
+    z-index: 1; /* Đưa hình ảnh xuống dưới nội dung */
+}
+
+#hill1 {
+    z-index: 2; /* Đặt thứ tự hiển thị cao hơn */
+}
+
+#hill2 {
+    z-index: 3;
+}
+
+#hill3 {
+    z-index: 4;
+}
+
+#hill4 {
+    z-index: 5;
+}
+
+#hill5 {
+    z-index: 6;
+}
+
+#tree {
+    z-index: 7;
+}
+
+#text{
+    position: absolute; /* Đặt vị trí tuyệt đối cho phần tử con */
+    color: #ffffff; /* Màu chữ trắng */
+    font-size: 6em;
+    z-index: 8; /* Đặt thứ tự hiển thị cao nhất */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Đổ bóng cho chữ */
+}
+
+#leaf {
+    z-index: 9;
+}
+
+#plant {
+    z-index: 10;
+} img{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    
+}
+
+.sec {
+    position: relative;
+    padding: 50px auto;
+    background: #003329;
+    z-index: 1; /* Đảm bảo nội dung nằm trên các hình ảnh */
+    width: 100%;
+    margin:0px auto;
+}
+
+.sec h2{
+    color: #fcfdfd; /* Màu chữ */
+    font-size: 3.5em;
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+.sec p{
+    color: #fcfdfd; /* Màu chữ */
+    font-size: 1.2em;
+}
+
+
+/* RESPONSIVE */
+
+/* Default styles (Desktop) */
+body {
+    font-size: 16px;
+}
+
+header {
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation a {
+    margin-right: 20px;
+    font-size: 1em;
+}
+
+/* Parallax Section */
+.Parallax {
+    min-height: 100vh;
+}
+
+.sec {
+    padding: 50px 100px;
+    margin: 0 auto;
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 50px;
+    }
+
+    .navigation a {
+        margin-right: 15px;
+        font-size: 0.9em;
+    }
+
+    .sec {
+        padding: 40px 50px;
+    }
+
+    #text {
+        font-size: 4em; /* Giảm kích thước chữ */
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navigation a {
+        margin: 10px 0;
+        font-size: 0.8em;
+    }
+
+    .sec h2{
+        font-size: 1.8em;
+    }
+
+    #text {
+        font-size: 3em; /* Giảm kích thước chữ */
+        text-align: center;
+    }
+}
